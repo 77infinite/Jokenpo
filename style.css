@@ -1,0 +1,43 @@
+body{
+    background-image: url('junkenpo\images\back.jpg');
+    background-repeat: no-repeat;
+    background-color:wheat;
+} 
+img{
+    width: 200px;
+    height: 200px;
+    border: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+#imageplay{
+    width: 150px;
+    height: 150px;
+    border-style: solid;
+    border-radius: 20px;
+    border: 24px 0px;
+    background-color: white;
+}
+h1{
+    text-align: center;
+}
+p{
+    text-align: center;
+    font-size: 30px;
+}
+.maquina{
+    text-align: center;
+    border-style: solid;
+    border-radius: 24px;
+    background-color: rgb(17, 201, 115);
+    width: 50%;
+}
+
+#resultado{
+    text-align: center;
+    border-style: solid;
+    border-radius: 24px;
+    background-color:mediumslateblue;
+    width: 50%;
+}

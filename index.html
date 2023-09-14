@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jo-ken-po</title>
+</head>
+<body image="junkenpo\images\back.jpg"> 
+    <!--Objetivo: pedra papel e tesoura--> 
+    <h1>Pedra Papel e Tesoura</h1>
+    <p>Faça a sua jogada</p>
+    <!--Escolha da jogada--> 
+    <div align="center">
+    <button onclick="jogar(1)">
+        <img src="images/pedra.png"/>
+    </button>
+    <button onclick="jogar(2)">
+        <img src="images/papel.png"/>
+    </button>
+    <button onclick="jogar(3)">
+        <img src="images/tesoura.png"/>
+    </button></div><hr>
+    <!--escolha da maquina--> 
+    <center><p class="maquina">Escolha da maquina</p>
+<img src="" id="imageplay"/></center>
+    <!--ganhou perdeu ou empatou--> 
+    <center><p id="resultado"></p></center>
+    
+    <script>
+        //função do jogo
+        function jogar(escolhaDoUsuario){
+            //maquina escolhe aleatoriamente um valor de 1 a 3
+            const escolhaDoComputador = Math.floor(Math.random() * 3) + 1
+            let resultado = ""
+            let imageplay = ""
+            //colocar a escolha do pc na tela
+            if (escolhaDoComputador == 1){
+                document.getElementById("imageplay").src ="images/pedra.png" 
+            }
+            else if (escolhaDoComputador == 2){
+                document.getElementById("imageplay").src = "images/papel.png"
+            }
+            else if (escolhaDoComputador == 3){
+                document.getElementById("imageplay").src = "images/tesoura.png"
+            }
+            //dizer o resultado da partida
+            if(escolhaDoUsuario == escolhaDoComputador){
+                resultado = "Empate"
+            }   
+            else if((escolhaDoUsuario == 1 && escolhaDoComputador == 3) || (escolhaDoUsuario == 3 && escolhaDoComputador == 2)){
+                resultado = "Ganhou"
+            }
+            else if(escolhaDoUsuario == 2 && escolhaDoComputador == 1){
+                resultado = "Ganhou"   
+            }
+            else{
+                resultado = "Perdeu"
+            }
+            document.getElementById("resultado").innerHTML = resultado 
+        }
+    </script>
+</body>
+</html>
